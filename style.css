@@ -37,3 +37,67 @@ body{
         }
     }
 }
+
+/* Home Page Styling */
+.home{
+    display: flex;
+    .left{
+        background-color: black;
+        border-radius: 2em;
+        margin: 6rem 0;
+        display: flex;
+        margin-right: 20rem;
+        img{
+            width: 45em;
+            :hover{
+                filter: grayscale(100%);
+            }
+        }
+    }
+    .right{
+        margin: 12rem;
+        color: white;
+        font-size: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        h1{
+            font-size: 2em;
+            span{
+                color: green;
+            }
+        }
+        p{
+            font-size: 1em;
+        }
+        button{
+            background-color: inherit;
+            width: 17rem;
+            height: 4em;
+            border: 1px solid green;
+            border-radius: 2rem;
+            display: flex;
+            justify-content: space-between;
+            padding: ;
+            align-items: center;
+            color: white;
+            font-weight: bolder;
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 2em;
+                margin-left: 1rem;
+            }
+            i{
+                font-size: 2em;
+                height: 3.4rem;
+                width: 2.9rem;
+                border-radius: 50%;
+                background-color: green;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
