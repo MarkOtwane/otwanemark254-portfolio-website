@@ -1,143 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome Free CDN -->
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</head>
-<body>
-    <!-- Header section wich contains the  chnge color,home icon, about me, portfolio, blogs, contact me all are in the right side of the browser -->
-    <div class="header">
-        <div class="color-change">
-            <i class="fa-brands fa-themeco"></i>
-        </div>
-        <div class="navs">
-            <a href="#"><i class="fa-solid fa-house"></i></a>
-            <a href=""><i class="fa-solid fa-users"></i></a>
-            <a href=""><i class="fa-solid fa-briefcase"></i></a>
-            <a href=""><i class="fa-solid fa-blog"></i></a>
-            <a href=""><i class="fa-solid fa-envelope"></i></a>
-        </div>
-    </div>
-    <div class="home">
-        <div class="left">
-            <img src="MarkB.png" alt="Profile picture">
-        </div>
-        <div class="right">
-            <h1>Hi, I'm <span>Mark Otwane</span> A Full-Stack Web Developer.</h1>
-            <p>I'm a Full-Stack Web Developer. I specialize in both Front-End and Back-End Development, creating seamless, user-friendly websites and applications. I love to create beautiful and functional websites. </p>
-            <button><a href="">Download CV</a> <i class="fa-solid fa-download"></i></button>
-        </div>
-    </div>
+		<title>Mark Otwane Portfolio</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="home" id="home">
+			<nav>
+				<ul>
+					<a href="#home"><li class="active">Home</li></a>
+					<a href="#about"><li>About</li></a>
+					<a href="#skills"><li>Skills</li></a>
+					<a href="#contact"><li>Contact</li></a>
+				</ul>
+			</nav>
+			<div class="main">
+				<img src="./mark.png" alt="Mark Otwane" />
+				<div class="description">
+					<h1>Mark Otwane</h1>
+					<h2>Software Engineer | Python Expert | Angular Developer | Nestjs Specialist</h2>
+					<p>I create beautiful, functional and user centered digital experience that solve real world solutions</p>
+					<div class="buttons">
+						<button>View my work</button>
+						<button>Download CV</button>
+					</div>
+					<div class="social-links">
+						<!-- github, instagram, linkedIn  -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about" id="about">
+			<h1>About <span>Me</span></h1>
+			<div class="description">
+				<div class="left">
+					<div class="top">
+						<p>
+							Highly motivated software engineer with 2+ years of experience in creating impactful digital solutions. Skilled in:
 
-    <div class="about">
-        <div class="top">
-            <h1>ABOUT <span>ME</span></h1>
-            <div class="left">
-                <h3>INFORMATION ABOUT ME</h3>
-                <p>I have dedicated my career to blending artistic vision with technical proficiency. With years of experience in web development, I craft responsive, user-friendly websites that make a lasting impression. My graphic design skills bring brands to life through compelling visuals, while my video editing expertise transforms raw footage into engaging stories. </p>
+							<li>Python (Automation)</li>
+							<li>Frontend: Angular, TypeScript</li>
+							<li>Backend: NestJS, PHP</li>
+							<li>Databases: Postgres, MySQL, MongoDB, Prisma, Neon</li>
+						</p>
+						<p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.</p>
+					</div>
+					<div class="bottom">
+						<div class="right">
+							<span>50 + </span>
+							<p>Completed Projects</p>
+						</div>
 
-                <button><a href="">Download CV</a> <i class="fa-solid fa-download"></i></button>
-            </div>
-            <div class="right">
-                <div class="projects">
-                    <h1>100 +</h1>
-                    <p>PROJECTS COMPLETED</p>
-                </div>
-                <div class="projects">
-                    <h1>2 +</h1>
-                    <p>YEARS OF EXPERIENCE</p>
-                </div>
-                <div class="projects">
-                    <h1>10 +</h1>
-                    <p>HAPPY CLIENTS</p>
-                </div>
-                <div class="projects">
-                    <h1>5 +</h1>
-                    <p>CUSTOMER REVIEW</p>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="skills">
-            <div>
-                <p>HTML</p>
-                <!-- progress bar -->
-                 <p>90%</p>
-            </div>
-            <div>
-                <p>CSS</p>
-                <!-- progress bar -->
-                 <p>70%</p></div>
-            <div>
-                <p>JAVASCRIPT</p>
-                <!-- progress bar -->
-                 <p>40%</p></div>
-            <div>
-                <p>NESTJS</p>
-                <!-- progress bar -->
-                 <p>10%</p></div>
-            <div>
-                <p>MYSQL</p>
-                <!-- progress bar -->
-                 <p>40%</p>
-            </div>
-            <div>
-                <p>PHP</p>
-                <!-- progress bar -->
-                 <p>40%</p>
-            </div>
-            <div>
-                <p>POSTRESQL</p>
-                <!-- progress bar -->
-                 <p>40%</p>
-            </div>
-        </div>
-        <hr>
+						<div class="left">
+							<span>2 + </span>
+							<p>Years of experience</p>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<h3>Quick Facts</h3>
+					<div>
+						<p>Location</p>
+						<p>Chuka, Kenya</p>
+					</div>
 
-        <div class="timeline">
-            <h1>My Timeline</h1>
-            <div class="work">
-                <div class="icon">
-                    <i class="fa-regular fa-briefcase"></i>
-                </div>
-                <p>2023 To PRESENT</p>
-                <h4>SOFTWARE ENGINEER <span>MICROTECH SOLUTIONS LIMITED</span></h4>
-                <p>Building innovative solutions with code.
-                    Let's create something amazing for the future.
-                </p>
-            </div>
-            <div class="work">
-                <div class="icon">
-                    <i class="fa-regular fa-briefcase"></i>
-                </div>
-                <p>2022 To PRESENT</p>
-                <h4>GRAPHIC DESIGNER <span>MICROTECH SOLUTIONS LIMITED</span></h4>
-                <p>Crafting visual stories that captivate and inspire. Allow me to bring your ideas to life!</p>
-            </div>
-            <div class="work">
-                <div class="icon">
-                    <i class="fa-regular fa-briefcase"></i>
-                </div>
-                <p>2024 To PRESENT</p>
-                <h4>LIFE COUCH <span>MICROTECH SOLUTIONS LIMITED</span></h4>
-                <p>Empowering you to unlock your potential and live your best life. Come we grow together.</p>
-            </div>
-            <div class="work">
-                <div class="icon">
-                    <i class="fa-regular fa-briefcase"></i>
-                </div>
-                <p>2025 To PRESENT</p>
-                <h4>AUTHOR <span>MICROTECH SOLUTIONS LIMITED</span></h4>
-                <p>Helping you transform your life one book at a time. Let's embark on the journey of self-growth.</p>
-            </div>
-        </div>
-    </div>
-</body>
+					<div>
+						<p>Experience</p>
+						<p>2 + years</p>
+					</div>
+					<div>
+						<p>Availability</p>
+						<p><span>available</span></p>
+					</div>
+					<div>
+						<p>Stack</p>
+						<p>MERN Python</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="skills" id="skills">
+			<h1>Skills & <span>Services</span></h1>
+			<div class="skill">
+				<div>
+					<div class="icon"></div>
+					<h3>Frontend Development</h3>
+					<p>React, Angular, Typescript, Tailwind.</p>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<h3>Backend Development</h3>
+					<p>Nestjs, PHP, NodeJS, Express, Python</p>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<h3>UX/UI</h3>
+					<p>Figma, Canva</p>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<h3>Deployment</h3>
+					<p>Vercel, Netlify, Render, Neon</p>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<h3>Database</h3>
+					<p>PostgreSQL, MySQL, MongoDB, Prisma</p>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<h3>Performance</h3>
+					<p>Optimization, SEO, Analytics</p>
+				</div>
+			</div>
+			<div class="projects">
+				<div class="sample">
+					<div>
+						<img src="" alt="image" />
+						<h3>E-commerce Application</h3>
+						<p>Full stack e-commerce application with payment intergration, having admin and user dashboard</p>
+						<div class="stack">
+							<button>Angular</button>
+							<button>NestJS</button>
+							<button>PostgreSQL</button>
+						</div>
+						<button><a href="">View Live</a></button>
+					</div>
+					<div>
+						<img src="" alt="image" />
+						<h3>E-commerce Application</h3>
+						<p>Full stack e-commerce application with payment intergration, having admin and user dashboard</p>
+						<div class="stack">
+							<button>Angular</button>
+							<button>NestJS</button>
+							<button>PostgreSQL</button>
+						</div>
+						<button><a href="">View Live</a></button>
+					</div>
+					<div>
+						<img src="" alt="image" />
+						<h3>E-commerce Application</h3>
+						<p>Full stack e-commerce application with payment intergration, having admin and user dashboard</p>
+						<div class="stack">
+							<button>Angular</button>
+							<button>NestJS</button>
+							<button>PostgreSQL</button>
+						</div>
+						<button><a href="">View Live</a></button>
+					</div>
+				</div>
+				<button class="btn"><a href="">View More</a></button>
+			</div>
+		</div>
+		<div class="contact" id="contact">
+			<h1>Let's Work Together</h1>
+			<p>Have a project in mind? I'd love to hear about it and discuss how we can bring your ideas to life.</p>
+			<div class="socials">
+				<div>
+					<div class="icon"></div>
+					<span>Email</span>
+					<p>otwanemark003@gmail.com</p>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<span>LinkedIn</span>
+					<p>@otwanemark</p>
+				</div>
+				<div>
+					<div class="icon"></div>
+					<span>Github</span>
+					<p>@MarkOtwane</p>
+				</div>
+			</div>
+			<button class="btn">Get in touch</button>
+		</div>
+		<footer>
+			<p>&copy; 2025 Mark Otwane. All rights reserved</p>
+		</footer>
+	</body>
 </html>

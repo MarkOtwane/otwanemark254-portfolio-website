@@ -1,102 +1,129 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+	.btn {
+		margin-top: 2rem;
+		display: block;
+		margin: 0 auto;
+	}
 }
-body{
-    background-color: rgb(23, 23, 29);
+.home {
+	nav {
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 5rem;
+		background-color: orangered;
+		position: fixed;
+		z-index: 1;
+	}
+	nav ul {
+		list-style: none;
+		display: flex;
+		gap: 40px;
+		justify-content: start;
+		padding: 0.5rem 1rem;
+
+		a {
+			text-decoration: none;
+			color: grey;
+		}
+	}
+	nav.before .active-element {
+		transform: rotate(180deg);
+	}
+	.main {
+		padding-top: 3rem;
+		img {
+			padding-top: 3rem;
+			display: block;
+			margin: 0 auto;
+			height: 18rem;
+		}
+		.description {
+			gap: 0.8rem;
+			h1,
+			h2,
+			p,
+			div {
+				text-align: center;
+			}
+		}
+	}
+}
+.about {
+	padding: 0.5rem;
+	h1 {
+		text-align: center;
+		span {
+			color: #0a0aca;
+		}
+	}
+	.description {
+		display: flex;
+		justify-content: center;
+		.left {
+			width: 25rem;
+			.bottom {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+		.right {
+			margin-top: 2rem;
+			width: 18rem;
+			div {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
 }
 
-.header{
-    margin:4em;
-    display: flex;
-    flex-direction: column;
-    /* Float property changes elements either left or right */
-    float: right;
-    gap: 3em;
-    .color-change, .navs{
-        font-size: 3em;
-        color: white;
-        i{
-            background-color: gray;
-            border-radius: 50%;
-            width: 1.5em;
-            height: 1.5em;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-    }
-    .navs{
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        margin-top: 2em;
-        a{
-            text-decoration: none;
-            color: white;
-        }
-    }
-}
+.skills {
+	h1 {
+		text-align: center;
+		span {
+			color: hsl(240, 100%, 50%);
+		}
+	}
+	justify-content: space-evenly;
 
-/* Home Page Styling */
-.home{
-    display: flex;
-    .left{
-        background-color: black;
-        border-radius: 2em;
-        margin: 6rem 0;
-        display: flex;
-        margin-right: 20rem;
-        img{
-            width: 45em;
-            :hover{
-                filter: grayscale(100%);
-            }
-        }
-    }
-    .right{
-        margin: 12rem;
-        color: white;
-        font-size: 2em;
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-        h1{
-            font-size: 2em;
-            span{
-                color: green;
-            }
-        }
-        p{
-            font-size: 1em;
-        }
-        button{
-            background-color: inherit;
-            width: 17rem;
-            height: 4em;
-            border: 1px solid green;
-            border-radius: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            font-weight: bolder;
-            a{
-                text-decoration: none;
-                color: white;
-                font-size: 2em;
-                margin-left: 1rem;
-            }
-            i{
-                font-size: 2em;
-                height: 3.4rem;
-                width: 2.9rem;
-                border-radius: 50%;
-                background-color: green;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-    }
+	.skill {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		margin: 0 auto;
+		/* width: %; wotk on this */
+	}
+	.projects {
+		.sample {
+			display: flex;
+			justify-content: space-evenly;
+			div {
+				width: 15rem;
+				gap: 2rem;
+			}
+		}
+		.btn {
+			margin-top: 2rem;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+.contact {
+	h1,
+	p {
+		text-align: center;
+	}
+	.socials {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 4rem;
+	}
+}
+footer {
+	text-align: center;
 }
