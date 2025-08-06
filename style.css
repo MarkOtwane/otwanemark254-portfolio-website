@@ -5,6 +5,9 @@
 		margin: 0 auto;
 	}
 }
+body {
+	background-color: #1b1817;
+}
 .home {
 	nav {
 		top: 0;
@@ -13,7 +16,6 @@
 		height: 5rem;
 		position: fixed;
 		z-index: 1;
-		
 	}
 	nav ul {
 		list-style: none;
@@ -24,7 +26,7 @@
 
 		a {
 			text-decoration: none;
-			color: grey;
+			color: #c6c5c5;
 		}
 	}
 	nav.before .active-element {
@@ -45,6 +47,9 @@
 			p,
 			div {
 				text-align: center;
+			}
+			h1{
+				color: #FF2D38;
 			}
 		}
 	}
