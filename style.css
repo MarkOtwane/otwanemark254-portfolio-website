@@ -51,6 +51,14 @@ body {
 			h1{
 				color: #FF2D38;
 			}
+			h2, p{
+				color: azure;
+			}
+			.btn{
+				button{
+					background-color: blue;
+				}
+			}
 		}
 	}
 }
@@ -132,3 +140,51 @@ body {
 footer {
 	text-align: center;
 }
+
+/* Theme toggle styles and overrides */
+#theme-toggle{
+	position: fixed;
+	top: 0.8rem;
+	right: 1rem;
+t	background: transparent;
+	border: none;
+	color: inherit;
+	font-size: 1.2rem;
+	cursor: pointer;
+	z-index: 1000;
+	padding: 0.35rem;
+	border-radius: 6px;
+}
+#theme-toggle:focus{ outline: 2px solid rgba(0,0,0,0.12); }
+
+body { transition: background-color .25s ease, color .25s ease; }
+
+/* Light theme (default) */
+body.light{
+	background-color: #ffffff;
+	color: #111111;
+}
+
+body.light nav a { color: #333333 !important; }
+body.light a { color: #1a73e8; }
+body.light footer p { color: #444444; }
+body.light .home .main .description h1 { color: #FF2D38; }
+body.light .home .main .description h2, body.light .home .main .description p { color: #333333; }
+body.light .btn button { background-color: #0a72ff; color: #ffffff; }
+
+/* Dark theme */
+body.dark{
+	background-color: #1b1817;
+	color: #e6e6e6;
+}
+
+body.dark nav a { color: #c6c5c5 !important; }
+body.dark a { color: #9ecbff; }
+body.dark footer p { color: #cfcfcf; }
+body.dark .home .main .description h1 { color: #FF2D38; }
+body.dark .home .main .description h2, body.dark .home .main .description p { color: azure; }
+body.dark .btn button { background-color: #0b5da7; color: #ffffff; }
+
+/* Ensure toggle icon inherits theme color */
+#theme-toggle i { pointer-events: none; }
+

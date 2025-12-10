@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<title>Mark Otwane Portfolio</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
@@ -16,6 +17,11 @@
 					<a href="#skills"><li>Skills</li></a>
 					<a href="#contact"><li>Contact</li></a>
 				</ul>
+
+				<!-- Theme toggle button -->
+				<button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+					<i class="fas fa-moon"></i>
+				</button>
 			</nav>
 			<div class="main">
 				<img src="./mark.png" alt="Mark Otwane" />
@@ -23,12 +29,23 @@
 					<h1>Mark Otwane</h1>
 					<h2>Software Engineer | Python Expert | Angular Developer | Nestjs Specialist</h2>
 					<p>I create beautiful, functional and user centered digital experience that solve real world solutions</p>
-					<div class="buttons">
-						<button>View my work</button>
-						<button>Download CV</button>
+					<div class="btn">
+						<button><a href="https://github.com/MarkOtwane">View my work</a></button>
+						<button><a href="./MARK OTWANE-1.pdf" download="./MARK OTWANE-1.pdf">Download CV</a></button>
 					</div>
 					<div class="social-links">
 						<!-- github, instagram, linkedIn  -->
+						<a href="https://github.com/MarkOtwane" target="_blank">
+							<i class="fab fa-github"></i>
+						</a>
+
+						<a href="https://www.instagram.com/otwanemark" target="_blank">
+							<i class="fab fa-instagram"></i>
+						</a>
+
+						<a href="https://www.linkedin.com/in/mark-otwane-800871349" target="_blank">
+							<i class="fab fa-linkedin"></i>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -180,5 +197,39 @@
 		<footer>
 			<p>&copy; 2025 Mark Otwane. All rights reserved</p>
 		</footer>
+
+		<!-- Theme toggle script -->
+		<script>
+			(function () {
+				const toggle = document.getElementById("theme-toggle");
+				if (!toggle) return;
+				const icon = toggle.querySelector("i");
+				const body = document.body;
+
+				function updateIcon(theme) {
+					if (!icon) return;
+					icon.className = theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+				}
+
+				function setTheme(theme) {
+					body.classList.remove("light", "dark");
+					body.classList.add(theme);
+					localStorage.setItem("theme", theme);
+					updateIcon(theme);
+				}
+
+				toggle.addEventListener("click", () => {
+					setTheme(body.classList.contains("dark") ? "light" : "dark");
+				});
+
+				const saved = localStorage.getItem("theme");
+				if (saved) {
+					setTheme(saved);
+				} else {
+					const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+					setTheme(prefersDark ? "dark" : "light");
+				}
+			})();
+		</script>
 	</body>
 </html>
