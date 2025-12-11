@@ -1,0 +1,23 @@
+{
+	"name": "mark-otwane-portfolio",
+	"version": "1.0.0",
+	"description": "Portfolio website for Mark Otwane - Software Engineer",
+	"main": "index.html",
+	"scripts": {
+		"dev": "echo 'Open index.html in your browser'",
+		"build": "echo 'No build needed for static site'",
+		"start": "echo 'Open index.html in your browser'"
+	},
+	"keywords": [
+		"portfolio",
+		"software-engineer",
+		"python",
+		"angular",
+		"nestjs",
+		"full-stack"
+	],
+	"author": "Mark Otwane",
+	"license": "MIT",
+	"devDependencies": {},
+	"dependencies": {}
+}
