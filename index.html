@@ -3,25 +3,29 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Mark Otwane - Software Engineer specializing in Python, Angular, NestJS. Full-stack developer with 2+ years of experience building impactful digital solutions." />
+		<meta
+			name="description"
+			content="Mark Otwane - Software Engineer specializing in Python, Angular, NestJS. Full-stack developer with 2+ years of experience building impactful digital solutions."
+		/>
 		<meta name="keywords" content="software engineer, full-stack developer, Python, Angular, NestJS, web development, portfolio" />
 		<meta name="author" content="Mark Otwane" />
-		
+
 		<title>Mark Otwane - Software Engineer Portfolio</title>
-		
+
 		<!-- Preconnect to external resources -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
+
 		<!-- Font Awesome for social icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-		
+
 		<!-- Main Stylesheet -->
 		<link rel="stylesheet" href="style.css" />
-		
+
 		<!-- GSAP for animations -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
 	</head>
 	<body>
 		<!-- Navigation -->
@@ -76,9 +80,7 @@
 			<div class="description">
 				<div class="left">
 					<div class="top">
-						<p>
-							Highly motivated software engineer with 2+ years of experience in creating impactful digital solutions. Skilled in:
-						</p>
+						<p>Highly motivated software engineer with 2+ years of experience in creating impactful digital solutions. Skilled in:</p>
 						<ul>
 							<li>Python (Automation)</li>
 							<li>Frontend: Angular, TypeScript</li>
@@ -172,7 +174,11 @@
 			<div class="projects">
 				<div class="sample">
 					<div>
-						<img src="https://pixabay.com/get/gd37b731586163bca123190843034da0b73997b1aa2a79b63b4d9a728e674fdadf0694058145f070bb7b9b07932b016f5.jpg" alt="E-commerce Application - Mohamed_hassan on Pixabay" loading="lazy" />
+						<img
+							src="https://pixabay.com/get/gd37b731586163bca123190843034da0b73997b1aa2a79b63b4d9a728e674fdadf0694058145f070bb7b9b07932b016f5.jpg"
+							alt="E-commerce Application - Mohamed_hassan on Pixabay"
+							loading="lazy"
+						/>
 						<div>
 							<h3>E-commerce Application</h3>
 							<p>Full-stack e-commerce application with payment integration, featuring admin and user dashboards</p>
@@ -187,7 +193,11 @@
 						</div>
 					</div>
 					<div>
-						<img src="https://pixabay.com/get/g23122ca934797d3f14032ef4ae8f74761e5fd31c4b80bf7e655dc6a40916f5e10da1120790ace07b208118a8392ffd92.jpg" alt="Analytics Dashboard - u_syz4wcgykc on Pixabay" loading="lazy" />
+						<img
+							src="https://pixabay.com/get/g23122ca934797d3f14032ef4ae8f74761e5fd31c4b80bf7e655dc6a40916f5e10da1120790ace07b208118a8392ffd92.jpg"
+							alt="Analytics Dashboard - u_syz4wcgykc on Pixabay"
+							loading="lazy"
+						/>
 						<div>
 							<h3>Analytics Dashboard</h3>
 							<p>Real-time analytics dashboard with data visualization and reporting capabilities</p>
@@ -202,7 +212,11 @@
 						</div>
 					</div>
 					<div>
-						<img src="https://pixabay.com/get/g770ca7b68424d8c711cfe2dcf4eb52bf4f6f3530098cba0ee825099961f8d713b6f31ef38b730bef08272a32454dcfa2.png" alt="Portfolio Website - ZT_OSCAR on Pixabay" loading="lazy" />
+						<img
+							src="https://pixabay.com/get/g770ca7b68424d8c711cfe2dcf4eb52bf4f6f3530098cba0ee825099961f8d713b6f31ef38b730bef08272a32454dcfa2.png"
+							alt="Portfolio Website - ZT_OSCAR on Pixabay"
+							loading="lazy"
+						/>
 						<div>
 							<h3>Portfolio Website</h3>
 							<p>Modern, responsive portfolio website with smooth animations and dark mode support</p>
@@ -294,157 +308,118 @@
 			})();
 		</script>
 
-		<!-- GSAP Animations Script -->
+		<!-- Improved Animation Script -->
 		<script>
-			// Wait for GSAP to load
-			window.addEventListener('load', function() {
-				if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-					console.warn('GSAP not loaded, animations disabled');
+			// Initialize animations only after everything is loaded
+			window.addEventListener("load", function () {
+				console.log("Page loaded, checking GSAP...");
+
+				// Function to ensure content visibility
+				function ensureContentVisibility() {
+					const elements = document.querySelectorAll(".skill > div, .projects .sample > div, .socials > div");
+					elements.forEach((el, index) => {
+						// Always ensure content is visible
+						el.style.opacity = "1";
+						el.style.transform = "none";
+						el.style.visibility = "visible";
+
+						console.log(`Ensured visibility for element ${index + 1}:`, el.querySelector("h3")?.textContent || el.querySelector("span")?.textContent);
+					});
+				}
+
+				// Run immediately
+				ensureContentVisibility();
+
+				// Run again after 1 second as safety
+				setTimeout(ensureContentVisibility, 1000);
+
+				// Run again after 3 seconds as extra safety
+				setTimeout(ensureContentVisibility, 3000);
+
+				// Check if GSAP is loaded
+				if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+					console.warn("GSAP not loaded - using fallback animations only");
 					return;
 				}
 
-				gsap.registerPlugin(ScrollTrigger);
+				console.log("GSAP loaded successfully, setting up animations...");
 
-				// Animate hero section elements
-				gsap.from('.home .main img', {
-					duration: 1,
-					scale: 0.8,
-					opacity: 0,
-					ease: 'back.out(1.7)',
-				});
+				try {
+					gsap.registerPlugin(ScrollTrigger);
 
-				gsap.from('.home .description h1', {
-					duration: 1,
-					y: 30,
-					opacity: 0,
-					delay: 0.3,
-					ease: 'power3.out',
-				});
-
-				gsap.from('.home .description h2', {
-					duration: 1,
-					y: 30,
-					opacity: 0,
-					delay: 0.5,
-					ease: 'power3.out',
-				});
-
-				gsap.from('.home .description > p', {
-					duration: 1,
-					y: 30,
-					opacity: 0,
-					delay: 0.7,
-					ease: 'power3.out',
-				});
-
-				gsap.from('.home .btn', {
-					duration: 1,
-					y: 30,
-					opacity: 0,
-					delay: 0.9,
-					ease: 'power3.out',
-				});
-
-				gsap.from('.home .social-links', {
-					duration: 1,
-					y: 30,
-					opacity: 0,
-					delay: 1.1,
-					ease: 'power3.out',
-				});
-
-				// Animate sections on scroll
-				const sections = ['.about', '.skills', '.projects', '.contact'];
-				
-				sections.forEach((section, index) => {
-					gsap.from(section, {
-						scrollTrigger: {
-							trigger: section,
-							start: 'top 80%',
-							toggleActions: 'play none none none',
-						},
+					// Simple hero animations
+					gsap.from(".home .main img", {
 						duration: 1,
-						y: 60,
+						scale: 0.8,
 						opacity: 0,
-						ease: 'power3.out',
-					});
-				});
-
-				// Animate skill cards
-				gsap.from('.skill > div', {
-					scrollTrigger: {
-						trigger: '.skill',
-						start: 'top 80%',
-					},
-					duration: 0.8,
-					y: 40,
-					opacity: 0,
-					stagger: 0.1,
-					ease: 'power3.out',
-				});
-
-				// Animate project cards
-				gsap.from('.projects .sample > div', {
-					scrollTrigger: {
-						trigger: '.projects .sample',
-						start: 'top 80%',
-					},
-					duration: 0.8,
-					y: 40,
-					opacity: 0,
-					stagger: 0.15,
-					ease: 'power3.out',
-				});
-
-				// Animate contact cards
-				gsap.from('.socials > div', {
-					scrollTrigger: {
-						trigger: '.socials',
-						start: 'top 80%',
-					},
-					duration: 0.8,
-					y: 40,
-					opacity: 0,
-					stagger: 0.1,
-					ease: 'power3.out',
-				});
-
-				// Smooth scroll for navigation links
-				document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-					anchor.addEventListener('click', function (e) {
-						e.preventDefault();
-						const target = document.querySelector(this.getAttribute('href'));
-						if (target) {
-							gsap.to(window, {
-								duration: 1,
-								scrollTo: { y: target, offsetY: 64 },
-								ease: 'power3.inOut',
-							});
-						}
-					});
-				});
-
-				// Update active nav link on scroll
-				const navLinks = document.querySelectorAll('nav a');
-				const sections_for_nav = document.querySelectorAll('section[id]');
-
-				window.addEventListener('scroll', () => {
-					let current = '';
-					sections_for_nav.forEach(section => {
-						const sectionTop = section.offsetTop;
-						const sectionHeight = section.clientHeight;
-						if (scrollY >= sectionTop - 100) {
-							current = section.getAttribute('id');
-						}
+						ease: "back.out(1.7)",
 					});
 
-					navLinks.forEach(link => {
-						link.classList.remove('active');
-						if (link.getAttribute('href') === `#${current}`) {
-							link.classList.add('active');
-						}
+					// Section animations with better visibility handling
+					const sections = [".about", ".skills", ".projects", ".contact"];
+
+					sections.forEach((section) => {
+						gsap.from(section, {
+							scrollTrigger: {
+								trigger: section,
+								start: "top 90%",
+								toggleActions: "play none none none",
+							},
+							duration: 0.8,
+							y: 20,
+							opacity: 0,
+							ease: "power3.out",
+							onComplete: function () {
+								// Ensure content is visible after animation
+								const skillCards = document.querySelectorAll(".skill > div, .projects .sample > div, .socials > div");
+								skillCards.forEach((card) => {
+									card.style.opacity = "1";
+									card.style.transform = "none";
+								});
+							},
+						});
 					});
-				});
+
+					// Simple smooth scroll
+					document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+						anchor.addEventListener("click", function (e) {
+							e.preventDefault();
+							const target = document.querySelector(this.getAttribute("href"));
+							if (target) {
+								target.scrollIntoView({
+									behavior: "smooth",
+									block: "start",
+								});
+							}
+						});
+					});
+
+					// Update active nav link
+					const navLinks = document.querySelectorAll("nav a");
+					const sections_for_nav = document.querySelectorAll("section[id]");
+
+					window.addEventListener("scroll", () => {
+						let current = "";
+						sections_for_nav.forEach((section) => {
+							const sectionTop = section.offsetTop;
+							if (scrollY >= sectionTop - 100) {
+								current = section.getAttribute("id");
+							}
+						});
+
+						navLinks.forEach((link) => {
+							link.classList.remove("active");
+							if (link.getAttribute("href") === `#${current}`) {
+								link.classList.add("active");
+							}
+						});
+					});
+
+					console.log("Animations set up successfully");
+				} catch (error) {
+					console.error("Animation setup failed:", error);
+					ensureContentVisibility();
+				}
 			});
 		</script>
 	</body>
