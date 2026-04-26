@@ -918,6 +918,12 @@ body.dark .socials .icon img {
   box-shadow: var(--shadow-lg);
 }
 
+.contact > button.btn a,
+.contact > button.btn a:hover {
+  color: white;
+  display: block;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
