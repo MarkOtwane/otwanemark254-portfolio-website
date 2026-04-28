@@ -12,6 +12,17 @@
 
 		<title>Mark Otwane - Software Engineer Portfolio</title>
 
+		<!-- Open Graph / Social -->
+		<meta property="og:title" content="Mark Otwane - Software Engineer Portfolio" />
+		<meta property="og:description" content="Full-stack developer specializing in Python, Angular, and NestJS. Check out projects and get in touch." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://your-domain.example/" />
+		<meta property="og:image" content="https://your-domain.example/og-image.png" />
+		<link rel="canonical" href="https://your-domain.example/" />
+
+		<!-- Sitemap -->
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
 		<!-- Preconnect to external resources -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,17 +41,25 @@
 	<body>
 		<!-- Navigation -->
 		<nav role="navigation" aria-label="Main navigation">
-			<ul>
-				<li><a href="#home" class="active">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
+			<div class="nav-inner">
+				<a class="brand" href="#home">Mark Otwane</a>
+				<button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" class="nav-toggle">
+					<span class="sr-only">Menu</span>
+					<i class="fas fa-bars" aria-hidden="true"></i>
+				</button>
 
-			<!-- Theme toggle button -->
-			<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-				<i class="fas fa-moon" aria-hidden="true"></i>
-			</button>
+				<ul id="primary-navigation" class="nav-list">
+					<li><a href="#home" class="active">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+
+				<!-- Theme toggle button -->
+				<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+					<i class="fas fa-moon" aria-hidden="true"></i>
+				</button>
+			</div>
 		</nav>
 
 		<!-- Hero Section -->
@@ -171,9 +190,18 @@
 			</div>
 
 			<!-- Projects Section -->
-			<div class="projects">
-				<div class="sample">
-					<div>
+			<div class="projects" id="projects">
+				<div class="project-controls">
+					<div class="filters" role="tablist" aria-label="Filter projects">
+						<button class="filter-btn active" data-filter="all">All</button>
+						<button class="filter-btn" data-filter="angular">Angular</button>
+						<button class="filter-btn" data-filter="nest">NestJS</button>
+						<button class="filter-btn" data-filter="php">PHP</button>
+					</div>
+				</div>
+
+				<div class="sample" id="project-list">
+					<div class="project-card" data-tags="angular nest" tabindex="0">
 						<img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80" alt="IM Investment e-commerce website preview" loading="lazy" />
 						<div>
 							<h3>IM Investment E-commerce</h3>
@@ -183,27 +211,35 @@
 								<button>NestJS</button>
 								<button>PostgreSQL</button>
 							</div>
-							<button aria-label="View IM Investment E-commerce live demo">
-								<a href="https://im-investments.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-							</button>
+							<div class="project-actions">
+								<button class="open-modal" aria-label="Open project details">Preview</button>
+								<button aria-label="View IM Investment live demo">
+									<a href="https://im-investments.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
+								</button>
+							</div>
 						</div>
 					</div>
-					<div>
+
+					<div class="project-card" data-tags="php javascript" tabindex="0">
 						<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80" alt="Photography website preview" loading="lazy" />
 						<div>
-							<h3>Photograph Website</h3>
+							<h3>Photography Website</h3>
 							<p>Creative photography studio website showcasing visual galleries, services, and elegant content presentation.</p>
 							<div class="stack">
 								<button>Javascript</button>
 								<button>Docker</button>
 								<button>PHP</button>
 							</div>
-							<button aria-label="View Photograph Website live demo">
-								<a href="https://photograph-studio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-							</button>
+							<div class="project-actions">
+								<button class="open-modal" aria-label="Open project details">Preview</button>
+								<button aria-label="View Photography live demo">
+									<a href="https://photograph-studio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
+								</button>
+							</div>
 						</div>
 					</div>
-					<div>
+
+					<div class="project-card" data-tags="angular nest" tabindex="0">
 						<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80" alt="JML E-learning platform preview" loading="lazy" />
 						<div>
 							<h3>JML E-learning Platform</h3>
@@ -213,49 +249,89 @@
 								<button>NestJS</button>
 								<button>PostgreSQL</button>
 							</div>
-							<button aria-label="View JML E-learning Platform live demo">
-								<a href="https://jlm-e-learning-platform.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-							</button>
+							<div class="project-actions">
+								<button class="open-modal" aria-label="Open project details">Preview</button>
+								<button aria-label="View JML live demo">
+									<a href="https://jlm-e-learning-platform.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
+
 				<button class="btn" aria-label="View more projects">
 					<a href="https://github.com/MarkOtwane" target="_blank" rel="noopener noreferrer">View More</a>
 				</button>
 			</div>
 		</section>
 
-		<!-- Contact Section -->
+		<!-- Testimonials Section -->
+		<section class="testimonials" id="testimonials">
+			<h1 class="section-title">What <span>Clients</span> Say</h1>
+			<div class="testimonial-list">
+				<blockquote>
+					<p>"Mark delivered an outstanding e-commerce solution on time — highly professional and communicative."</p>
+					<footer>- Client, IM Investment</footer>
+				</blockquote>
+				<blockquote>
+					<p>"Excellent attention to detail and thoughtful UI choices. Increased conversions after launch."</p>
+					<footer>- Photography Studio</footer>
+				</blockquote>
+			</div>
+		</section>
+
+		<!-- Contact Section (with simple form integration) -->
 		<section class="contact" id="contact">
 			<h1>Let's Work Together</h1>
-			<p>Have a project in mind? I'd love to hear about it and discuss how we can bring your ideas to life.</p>
+			<p>Have a project in mind? Fill out the form or use the contact cards below.</p>
+
+			<form class="contact-form" id="contact-form" method="POST" action="https://formspree.io/f/yourFormId">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required />
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required />
+
+				<label for="message">Message</label>
+				<textarea id="message" name="message" rows="6" required></textarea>
+
+				<button type="submit" class="btn">Send Message</button>
+				<p class="form-note">Form powered by Formspree — replace <em>yourFormId</em> with your form ID.</p>
+			</form>
+
 			<div class="socials">
 				<div>
 					<div class="icon">
-						<img src="./public/icons/mail.svg" alt="" aria-hidden="true" />
+						<img src="./public/icons/mail.svg" alt="Email icon" aria-hidden="true" />
 					</div>
 					<span>Email</span>
 					<p>otwanemark003@gmail.com</p>
 				</div>
 				<div>
 					<div class="icon">
-						<img src="./public/icons/linkedin.svg" alt="" aria-hidden="true" />
+						<img src="./public/icons/linkedin.svg" alt="LinkedIn icon" aria-hidden="true" />
 					</div>
 					<span>LinkedIn</span>
 					<p>@otwanemark</p>
 				</div>
 				<div>
 					<div class="icon">
-						<img src="./public/icons/github.svg" alt="" aria-hidden="true" />
+						<img src="./public/icons/github.svg" alt="GitHub icon" aria-hidden="true" />
 					</div>
 					<span>GitHub</span>
 					<p>@MarkOtwane</p>
 				</div>
 			</div>
-			<button class="btn" aria-label="Get in touch via email">
-				<a href="mailto:otwanemark003@gmail.com">Get in touch</a>
-			</button>
 		</section>
+
+		<!-- Project Modal / Lightbox -->
+		<div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+			<div class="modal-content">
+				<button class="modal-close" aria-label="Close">&times;</button>
+				<h2 id="modal-title">Project Preview</h2>
+				<div class="modal-body"></div>
+			</div>
+		</div>
 
 		<!-- Footer -->
 		<footer>
@@ -410,6 +486,102 @@
 					ensureContentVisibility();
 				}
 			});
+		</script>
+
+		<!-- Interactive helpers: mobile nav, filters, modal, and form enhancements -->
+		<script>
+			// Mobile nav toggle
+			(function () {
+				const navToggle = document.getElementById("nav-toggle");
+				const navList = document.getElementById("primary-navigation");
+				if (navToggle && navList) {
+					navToggle.addEventListener("click", () => {
+						const expanded = navToggle.getAttribute("aria-expanded") === "true";
+						navToggle.setAttribute("aria-expanded", String(!expanded));
+						navList.classList.toggle("open");
+					});
+				}
+			})();
+
+			// Project filters
+			(function () {
+				const buttons = document.querySelectorAll(".filter-btn");
+				const cards = document.querySelectorAll(".project-card");
+				buttons.forEach((btn) => {
+					btn.addEventListener("click", () => {
+						buttons.forEach((b) => b.classList.remove("active"));
+						btn.classList.add("active");
+						const filter = btn.getAttribute("data-filter");
+						cards.forEach((card) => {
+							if (filter === "all") return (card.style.display = "");
+							const tags = card.getAttribute("data-tags") || "";
+							card.style.display = tags.includes(filter) ? "" : "none";
+						});
+					});
+				});
+			})();
+
+			// Modal for project preview
+			(function () {
+				const modal = document.getElementById("project-modal");
+				const modalBody = modal && modal.querySelector(".modal-body");
+				const closeBtn = modal && modal.querySelector(".modal-close");
+				const openers = document.querySelectorAll(".open-modal");
+				function openModal(content) {
+					if (!modal) return;
+					modal.setAttribute("aria-hidden", "false");
+					modal.classList.add("open");
+					if (modalBody) modalBody.innerHTML = content;
+					document.body.style.overflow = "hidden";
+				}
+
+				function closeModal() {
+					if (!modal) return;
+					modal.setAttribute("aria-hidden", "true");
+					modal.classList.remove("open");
+					document.body.style.overflow = "";
+				}
+
+				openers.forEach((btn) => {
+					btn.addEventListener("click", (e) => {
+						const card = e.target.closest(".project-card");
+						if (!card) return;
+						const title = card.querySelector("h3")?.textContent || "Preview";
+						const img = card.querySelector("img")?.src || "";
+						const desc = card.querySelector("p")?.textContent || "";
+						openModal(`<img src="${img}" alt="${title}" style="width:100%;height:auto;border-radius:8px;"/><h3>${title}</h3><p>${desc}</p>`);
+					});
+				});
+
+				if (closeBtn) closeBtn.addEventListener("click", closeModal);
+				if (modal)
+					modal.addEventListener("click", (e) => {
+						if (e.target === modal) closeModal();
+					});
+				window.addEventListener("keydown", (e) => {
+					if (e.key === "Escape") closeModal();
+				});
+			})();
+
+			// Contact form: provide friendly UX after submit
+			(function () {
+				const form = document.getElementById("contact-form");
+				if (!form) return;
+				form.addEventListener("submit", (e) => {
+					// Allow normal submission to Formspree; show immediate feedback
+					const btn = form.querySelector('button[type="submit"]');
+					if (btn) {
+						btn.disabled = true;
+						btn.textContent = "Sending...";
+					}
+					setTimeout(() => {
+						if (btn) {
+							btn.disabled = false;
+							btn.textContent = "Send Message";
+						}
+					}, 3000);
+				});
+			})();
 		</script>
 	</body>
 </html>

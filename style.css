@@ -1104,3 +1104,169 @@ footer p {
 	outline: 2px solid var(--color-primary);
 	outline-offset: 2px;
 }
+
+/* ==========================================================================
+   Mobile Nav & Controls
+   ========================================================================== */
+.nav-inner {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 var(--space-6);
+	height: 100%;
+}
+
+.brand {
+	font-weight: var(--font-semibold);
+	color: var(--color-text-primary);
+}
+
+.nav-toggle {
+	background: transparent;
+	border: none;
+	font-size: 1.25rem;
+	display: none;
+	cursor: pointer;
+	color: var(--color-text-primary);
+}
+
+.nav-list {
+	display: flex;
+	gap: var(--space-6);
+	align-items: center;
+}
+
+.nav-list.open {
+	display: block;
+}
+
+@media (max-width: 768px) {
+	.nav-toggle {
+		display: block;
+	}
+	.nav-list {
+		display: none;
+		position: absolute;
+		top: var(--nav-height);
+		left: 0;
+		right: 0;
+		background: var(--color-surface);
+		padding: var(--space-6);
+		box-shadow: var(--shadow-lg);
+	}
+	.nav-list li {
+		margin-bottom: var(--space-3);
+	}
+	.nav-list li:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Project filters */
+.project-controls {
+	text-align: center;
+	margin-bottom: var(--space-6);
+}
+.filters {
+	display: inline-flex;
+	gap: var(--space-3);
+	flex-wrap: wrap;
+}
+.filter-btn {
+	background: var(--color-background);
+	border: 1px solid var(--color-border);
+	padding: var(--space-2) var(--space-4);
+	border-radius: var(--radius-md);
+	cursor: pointer;
+}
+.filter-btn.active {
+	background: var(--color-primary);
+	color: white;
+	border-color: var(--color-primary);
+}
+
+/* Modal / Lightbox */
+.modal {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: var(--z-modal);
+	padding: var(--space-6);
+}
+.modal.open {
+	display: flex;
+}
+.modal-content {
+	background: var(--color-surface);
+	padding: var(--space-6);
+	border-radius: var(--radius-lg);
+	max-width: 900px;
+	width: 100%;
+	box-shadow: var(--shadow-2xl);
+	position: relative;
+}
+.modal-close {
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	background: transparent;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+.modal-body {
+	margin-top: var(--space-4);
+}
+
+/* Testimonials */
+.testimonials .testimonial-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: var(--space-6);
+}
+.testimonials blockquote {
+	background: var(--color-surface);
+	padding: var(--space-6);
+	border-radius: var(--radius-xl);
+	border: 1px solid var(--color-border);
+}
+.testimonials blockquote p {
+	font-style: italic;
+	color: var(--color-text-secondary);
+}
+.testimonials blockquote footer {
+	margin-top: var(--space-4);
+	font-weight: var(--font-semibold);
+	color: var(--color-text-primary);
+}
+
+/* Contact form */
+.contact-form {
+	max-width: 700px;
+	margin: 0 auto var(--space-8);
+	display: grid;
+	gap: var(--space-4);
+}
+.contact-form label {
+	font-weight: var(--font-semibold);
+	color: var(--color-text-primary);
+}
+.contact-form input,
+.contact-form textarea {
+	padding: var(--space-3);
+	border-radius: var(--radius-md);
+	border: 1px solid var(--color-border);
+	background: var(--color-background);
+}
+.contact-form button.btn {
+	justify-self: start;
+}
+.form-note {
+	color: var(--color-text-tertiary);
+	font-size: var(--text-sm);
+}
