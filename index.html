@@ -71,11 +71,9 @@
 					<h2>Software Engineer | Python Expert | Angular Developer | NestJS Specialist</h2>
 					<p>I create beautiful, functional and user-centered digital experiences that solve real-world problems</p>
 					<div class="btn">
-						<button aria-label="View my work on GitHub">
-							<a href="https://github.com/MarkOtwane" target="_blank" rel="noopener noreferrer">View my work</a>
-						</button>
-						<button aria-label="View my CV">
-							<a href="https://docs.google.com/document/d/1r4snkaaciF3vH-895hGN5rwstweFeoOyTBtIpTnyP3g/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View CV</a>
+						<button type="button" data-href="https://github.com/MarkOtwane" aria-label="View my work on GitHub">View my work</button>
+						<button type="button" data-href="https://docs.google.com/document/d/1r4snkaaciF3vH-895hGN5rwstweFeoOyTBtIpTnyP3g/edit?usp=sharing" aria-label="View my CV">
+							View CV
 						</button>
 					</div>
 					<div class="social-links" role="list" aria-label="Social media links">
@@ -212,10 +210,8 @@
 								<button>PostgreSQL</button>
 							</div>
 							<div class="project-actions">
-								<button class="open-modal" aria-label="Open project details">Preview</button>
-								<button aria-label="View IM Investment live demo">
-									<a href="https://im-investments.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-								</button>
+								<button type="button" class="open-modal" aria-label="Open project details">Preview</button>
+								<button type="button" data-href="https://im-investments.vercel.app/" aria-label="View IM Investment live demo">View Live</button>
 							</div>
 						</div>
 					</div>
@@ -231,10 +227,8 @@
 								<button>PHP</button>
 							</div>
 							<div class="project-actions">
-								<button class="open-modal" aria-label="Open project details">Preview</button>
-								<button aria-label="View Photography live demo">
-									<a href="https://photograph-studio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-								</button>
+								<button type="button" class="open-modal" aria-label="Open project details">Preview</button>
+								<button type="button" data-href="https://photograph-studio.vercel.app/" aria-label="View Photography live demo">View Live</button>
 							</div>
 						</div>
 					</div>
@@ -250,18 +244,14 @@
 								<button>PostgreSQL</button>
 							</div>
 							<div class="project-actions">
-								<button class="open-modal" aria-label="Open project details">Preview</button>
-								<button aria-label="View JML live demo">
-									<a href="https://jlm-e-learning-platform.vercel.app/" target="_blank" rel="noopener noreferrer">View Live</a>
-								</button>
+								<button type="button" class="open-modal" aria-label="Open project details">Preview</button>
+								<button type="button" data-href="https://jlm-e-learning-platform.vercel.app/" aria-label="View JML live demo">View Live</button>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<button class="btn" aria-label="View more projects">
-					<a href="https://github.com/MarkOtwane" target="_blank" rel="noopener noreferrer">View More</a>
-				</button>
+				<button type="button" class="btn" data-href="https://github.com/MarkOtwane" aria-label="View more projects">View More</button>
 			</div>
 		</section>
 
@@ -335,7 +325,7 @@
 
 		<!-- Footer -->
 		<footer>
-			<p>&copy; 2025 Mark Otwane. All rights reserved.</p>
+			<p>&copy; 2026 Mark Otwane. All rights reserved.</p>
 			<p>Developed by <a href="https://microtech-solutions.vercel.app/" target="_blank" rel="noopener noreferrer">Microtech Solutions Limited</a></p>
 		</footer>
 
@@ -500,7 +490,28 @@
 						navToggle.setAttribute("aria-expanded", String(!expanded));
 						navList.classList.toggle("open");
 					});
+					navList.querySelectorAll("a").forEach((link) => {
+						link.addEventListener("click", () => {
+							navToggle.setAttribute("aria-expanded", "false");
+							navList.classList.remove("open");
+						});
+					});
 				}
+			})();
+
+			// Button links
+			(function () {
+				document.querySelectorAll("button[data-href]").forEach((button) => {
+					button.addEventListener("click", () => {
+						const href = button.getAttribute("data-href");
+						if (!href) return;
+						if (href.startsWith("mailto:")) {
+							window.location.href = href;
+							return;
+						}
+						window.open(href, "_blank", "noopener,noreferrer");
+					});
+				});
 			})();
 
 			// Project filters
