@@ -172,4 +172,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by Mark Otwane
+Built by Mark Otwane
