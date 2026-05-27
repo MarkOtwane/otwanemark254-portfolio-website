@@ -13,7 +13,6 @@ A modern, responsive portfolio website showcasing my skills as a Software Engine
 ## 🛠 Tech Stack
 
 -    **Frontend**: HTML5, CSS3, JavaScript
--    **Animations**: GSAP (GreenSock)
 -    **Icons**: Font Awesome
 -    **Fonts**: Space Grotesk, Inter (Google Fonts)
 -    **Deployment**: Vercel
