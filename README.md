@@ -1,6 +1,6 @@
 # Mark Otwane - Portfolio Website
 
-A modern, responsive portfolio website showcasing my skills as a Software Engineer specializing in Python, Angular, and NestJS.
+A modern, responsive portfolio website showcasing my skills as a Software Engineer specializing in Python, Angular, and Node JS.
 
 ## 🚀 Features
 
